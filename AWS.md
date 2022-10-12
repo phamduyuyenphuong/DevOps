@@ -133,5 +133,74 @@ CLI :
 + Mã nguồn mở
 
 ![image](https://user-images.githubusercontent.com/46096038/194033101-def45c4b-70f6-4064-8af5-ded3f8cf3303.png)
+- Access Keys được tạo thông qua  AWS console
+- Users quản lý khóa của chính bản thân
++ Access Key ID ~= username
++ Secret Access Key ~= password
+**Example:
+![image](https://user-images.githubusercontent.com/46096038/195271280-95629e81-dcc6-49a9-8a44-af197f95d0b1.png)
+4.1 What's the AWS CLI (Command Line Interface)
+- AWS CLI là một công cụ cho phép bạn tương tác với các dịch vụ AWS bằng cách sử dụng các lệnh từ trình bao dòng lệnh của bạn.
+Vì vậy, bất cứ khi nào bạn nhìn thấy một số mã trong đó bạn nhập một dòng lệnh và sau đó nó trả về một kết quả, ví dụ: aws, s3, cp, v.v., đây là những gì chúng tôi gọi là CLI.
+- truy cập trực tiếp vào các API công khai của các dịch vụ AWS
+- phát triển các tập lệnh để quản lý tài nguyên và tự động hóa một số tác vụ của mình.
+![image](https://user-images.githubusercontent.com/46096038/195271823-a2e8bf18-34a8-4c43-9fea-1b92db4777b3.png)
+4.2 What's the AWS SDK 
+- đây là một bộ thư viện, đây sẽ là ngôn ngữ cụ thể => một SDK cho các ngôn ngữ lập trình khác nhau
+- SDK nhúng vào ứng dụng của mình mà phải viết mã
+- Hỗ trợ nhiều ngôn ngữ lập trình khác nhau
+- Ngoài ra còn có SDK di dộng (Android, IOS hoặc IoT)
 
+Cài đặt AWS CLI Setup on Windows
+![image](https://user-images.githubusercontent.com/46096038/195279052-9ca21e2c-4aab-4254-bd7b-058080bab4dd.png)
+5. AWS CLI Hands On
+Tạo khóa truy cập:
+Không sử dụng account Root
+![image](https://user-images.githubusercontent.com/46096038/195282567-cd4ec6b2-bd36-47a7-abd8-daf6833ba264.png)
+vd: aws iam list-users -> liệt kê tất cả những người dùng trong tài khoản
+![image](https://user-images.githubusercontent.com/46096038/195282875-8a904c4e-21a2-43f6-92bb-5ed806a6c597.png)
+Sau khi xóa acc users
+![image](https://user-images.githubusercontent.com/46096038/195286836-7acd82e6-b0f0-46a9-8745-fd626e9dd9ca.png)
+
+=> quyền CLI giống hệt bảng điều khiển
+
+6.AWS CloudShell
+Các vùng có thể sử dụng Cloud Sell
+![image](https://user-images.githubusercontent.com/46096038/195289334-fb9c3d26-decc-4ec3-b89a-1f0b15b2a75b.png)
+
+Có thể thay đổi vùng : **Asia Pacific (Tokyo) ap-northeast-1**
+
+![image](https://user-images.githubusercontent.com/46096038/195290030-496ae7f2-0479-4893-ac16-7d76e2a3aef4.png)
+
+Cloud Shell là một thiết bị đầu cuối trong đám mây AWS
+example:
+
+![image](https://user-images.githubusercontent.com/46096038/195291772-20325a63-7f69-4851-92a4-fd5b77d65fad.png)
+
+7. IAM Roles for Services:
+Một vài dịch vụ AWS sẽ cần thực hiện hành động thay mặt bạn
+=> chỉ định quyền đối với các dịch vụ AWS với IAM Roles
+Một số roles phổ biến:
++ EC2 Instance Roles
++ Lambda Function Roles
++ Roles for CloudFormation
+ **Tạo IAM Roles**:
+
+![image](https://user-images.githubusercontent.com/46096038/195295600-f35079a7-d8c3-4a54-abf0-b1eda4feac02.png)
+
+8.IAM Security Tools (các loại công cụ bảo mật)
+- IAM Credentials Report (account-level) : Báo cáo này sẽ chứa tất cả người dùng tài khoản của bạn và trạng thái của các thông tin đăng nhập khác nhau của họ
+- IAM Access Advisor (user-level):
+  + hiển thị các quyền dịch vụ được cấp cho người dùng và thời điểm các dịch vụ đó được truy cập lần cuối
+  + Có thể sử dụng thông tin này để sửa đổi các chính sách của mình.
+9.IAM Guidelines & Best Practices
+- không sử dụng tài khoản gốc ngoại trừ khi bạn thiết lập tài khoản AWS của mình
+- 1 người dùng AWS = 1 người dùng thực
+- Có thể chỉ định người dùng vào các nhóm và chỉ định quyền cho các nhóm để đảm bảo rằng bảo mật được quản lý ở cấp nhóm
+- Nên tạo một pass mạnh
+- Có thể sử dụng và thực thi việc sử dụng Multi Factor Authentication (MFA) => đảm bảo account an toàn
+- Tạo và sử dụng Roles khi cấp quyền có dịch vụ AWS
+- Sử dụng Access Keys cho programmatic Access (CLI/SDK)
+- Kiểm tra quyền của Account với IAM Credentials report
+- Không chia sẻ IAM user và Access Keys
 
