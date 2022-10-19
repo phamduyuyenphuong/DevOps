@@ -203,4 +203,13 @@ Một số roles phổ biến:
 - Sử dụng Access Keys cho programmatic Access (CLI/SDK)
 - Kiểm tra quyền của Account với IAM Credentials report
 - Không chia sẻ IAM user và Access Keys
+*** Summary: 
+- Users: được ánh xạ tới người dùng thực tế trong công ty, có pass cho AWS console
+- Groups: chỉ nhóm các user
+- Policies (chính sách): cấp quyền cho user or group là các tài liệu JSON
+- Roles (vai trò): một phiên bản EC2 or AWS service
+- security : MFA + Pass policy
+- Access Keys :access AWS sử dụng CLI hoặc SDK
+- Audit : IAM Credential Reports và IAM Access Advisor
+- 
 
