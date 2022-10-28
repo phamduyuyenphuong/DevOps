@@ -90,3 +90,32 @@ Tuyệt vời cho các tác vụ lưu trữ nhiều yêu cầu cao, đọc và g
 • Hệ thống tệp phân tán
 => tên của phiên bản tối ưu hóa tìm kiếm AWS sẽ bắt đầu bằng I,G hoặc H
 ![image](https://user-images.githubusercontent.com/46096038/196661539-13bd6bb4-337e-4ee5-90eb-8efa8fadb44f.png)
+
+3.Giới thiệu to Security Groups
+• Security Groups là nền tảng của bảo mật mạng trong AWS
+• Kiểm soát cách thức lưu lượng truy cập được phép vào hoặc ra khỏi Phiên bản EC2.
+• Nhóm bảo mật chỉ chứa các quy tắc
+• Các quy tắc nhóm bảo mật có thể tham chiếu theo IP hoặc theo nhóm bảo mật
+
+![image](https://user-images.githubusercontent.com/46096038/198523009-5af1f0c3-ee4c-4d47-ac74-155bafa2cb3d.png)
+
+Security Groups: Một "firewall" trên các phiên bản EC2
+Quy tắc
++ Điều chỉnh quyền truy cập vào các cổng 
++ IP ranges được ủy quyền - IPv4 hay IPv6 
++ Kiểm soát mạng gửi đến (từ phiên bản khác)
++ Kiểm soát mạng gửi đi (từ phiên bản này sang phiên bản khác
+
+![image](https://user-images.githubusercontent.com/46096038/198528689-dbde6637-e077-4f40-8e07-359bfe23cb19.png)
+
+![image](https://user-images.githubusercontent.com/46096038/198539091-bdf91431-9db7-45f2-97af-07323f475aa0.png)
+
+*Classic Ports
+- port 22 = SSH(Secure Shell) : cho phép đăng nhập vào một EC2 instance trên Linux
+- port 21 = FTP (File Transfer Protocol) : upload files lên file share
+- port 22 = SFTP (secure File Transfer Protocol) : upload files sử dụng SSH (Vì đây là giao thức truyền files an toàn)
+- port 80 = HTTP : truy cập các trang web được bảo mật
+- port 443 = HTTPs: truy cập các trang web được bảo mật
+- port 3389= RDP (Remote Desktop Protocol) : sử dụng để đăng nhập Windows
+
+
