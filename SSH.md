@@ -1,20 +1,22 @@
-- Cách để kết nối bên trong các máy chủ của mình để thực hiện một số bảo trì hoặc hành động
-- Dựa trên hệ điều hành
-
-![image](https://user-images.githubusercontent.com/46096038/198554398-9fc17a8f-077d-4574-a18f-461a4354433e.png)
-
-Putty tương tự với SSH , nếu sử dụng bất kì Windows 
+ Cách kết nối bên trong các server để thực hiện một số bảo trì hoặc hành động
+ 
+ ![image](https://user-images.githubusercontent.com/46096038/198554398-9fc17a8f-077d-4574-a18f-461a4354433e.png)
+ 
+ Putty tương tự với SSH , nếu sử dụng bất kì Windows 
 EC2 Instance Connect sử dụng Mac, Linux, Windows tất cả các phiên bản, nhưng hiện tại chỉ hoạt động với Amazon NX2
-**Cách SSH vào EC2 Instance**
- **Windows**
- 1. SSH ?
- - Một chức năng quan trọng nhất, đặc biệt khi xử lý đám mây Amazon
+
+ 1. SSH (Secure Shell) ?
  - Cho phép remote máy từ xa bằng command line
  
  ![image](https://user-images.githubusercontent.com/46096038/198558895-05accb4a-48cb-4bb0-8247-d58cb336bc90.png)
   
   EC2 đang chạy Amazon Linux 2 và có IP công khai, cho phép SSH port 22 tới bất kỳ IP nào
-  2. sử dụng PuTTY để thực hiện SSH (win7, 8,win 10)
+
+**Cách SSH vào EC2 Instance**
+ **Windows**
+
+ 2. sử dụng PuTTY để thực hiện SSH (win7, 8,win 10)
+  
   Trong trường hợp tệp tải xuống dạng ".PEM", Có thể tạo trực tiếp định dạng PPK từ PuTTYgen
   
 ![image](https://user-images.githubusercontent.com/46096038/200764583-6aa101d0-87ef-462a-a222-66b6969dbd09.png)
@@ -23,9 +25,14 @@ EC2 Instance Connect sử dụng Mac, Linux, Windows tất cả các phiên bả
  ![image](https://user-images.githubusercontent.com/46096038/200764104-7e761ef3-82cb-4318-a4f9-6a390a7ce735.png)
  
  - Nhập tên server hoặc địa chỉ IP muốn kết nối
- ec2-user@52.194.232.234 địa chỉ IPv4 public (SSH)
+ 
+ ec2-user@52.194.232.234 địa chỉ IPv4 public (SSH) 
+ => open => truy cập trực tiếp vào EC2 Instance
+ 
 3. Win10
- Kiểm tra SSH trên Windows PowerShell hoặc command line
+
+ Kiểm tra SSH trên Windows bằng PowerShell hoặc command line
+ 
  ![image](https://user-images.githubusercontent.com/46096038/200766561-e1747176-3464-441a-9fcf-fd09fb306d8c.png)
  
   => lệnh SSH đã tồn tại
@@ -35,12 +42,17 @@ EC2 Instance Connect sử dụng Mac, Linux, Windows tất cả các phiên bả
 
 ![image](https://user-images.githubusercontent.com/46096038/200775511-ebc99498-7223-46a5-979c-45386878335e.png)
 
+- Đầu tiên ở thư mục chứa tệp ".PEM"
+- security group có port 22 cho SSH
+- Có thể thay đổi quyền của thư mục ".PEM" để không hiển thị các cảnh báo
 4. Có thể sử dụng EC2 Instances để thay thế SSH
 
 ![image](https://user-images.githubusercontent.com/46096038/200791479-b7432f78-4593-45e0-ac3e-458e47980d69.png)
 
 user name: được cung cấp theo mặc định
+
 Không còn tùy chọn khóa SSH, bởi vì khi kết nối đã tải lên khóa SSH tạm thời
+
 => Connect => truy cập vào Amazon Linux 2 AMI
 
 ![image](https://user-images.githubusercontent.com/46096038/200792733-6ff7ab48-69e6-434d-8adc-ee6d5ea78e27.png)
@@ -52,6 +64,7 @@ Không còn tùy chọn khóa SSH, bởi vì khi kết nối đã tải lên kh�
 5 **EC2 Instance Roles Demo**
 
 Nguyên tắc chung : Không bao giờ nhập key ID và Secret Access Key vào EC2 instance
+
 Thay vào đó sử dụng IAM roles để cung cấp thông tin đăng nhập
 
 ![image](https://user-images.githubusercontent.com/46096038/200798959-5197cf06-686b-4103-b975-b9ddf4889af6.png)
